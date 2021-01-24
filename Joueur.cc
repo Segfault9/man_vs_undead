@@ -38,3 +38,7 @@ int Joueur::mort(){
 	}
 	return 0;
 }
+
+void Joueur::setNom(string name){
+    nom = name; 
+}

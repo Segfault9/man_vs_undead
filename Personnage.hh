@@ -12,6 +12,7 @@ class Personnage : public Joueur {
 
 	public :
 		Personnage(string name);
+		Personnage(){};
 		~Personnage();
 		int attaque();
 };

@@ -20,6 +20,6 @@ class Arene {
 		~Arene();
 
 		void spawn_zombie(Zombie z);
-
+		void maj(Zombie z);
 		string toString();
 };

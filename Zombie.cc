@@ -1,5 +1,7 @@
 #include "Zombie.hh"
 #include <cstdlib>
+#include <time.h>
+#include <stdlib.h>
 
 using namespace std;
 #define PV_MAX 100
@@ -7,7 +9,7 @@ using namespace std;
 int Zombie::cpt = 0;
 
 Zombie::Zombie(string name): Entite(name){
-  	PV=100;
+  	PV=PV_MAX;
   	speed=1;
  	damage=20;
  	id = cpt;
@@ -17,6 +19,15 @@ Zombie::Zombie(string name): Entite(name){
 
 Zombie::Zombie(int x, int y):Entite("Zombie " + to_string(cpt), x,y){
   			
+}
+
+Zombie::Zombie():Entite("Zombie " + to_string(cpt)){
+  	PV=PV_MAX;
+  	speed=1;
+ 	damage=20;
+ 	id = cpt;
+ 	++cpt;
+
 }
 
 Zombie::~Zombie(){
@@ -55,6 +66,22 @@ int Zombie::mort(){
 	return 0;
 }
 
-int Zombie::move(){
-
+void Zombie::move(int speed){
+	// Déplacement aléatoire
+	int val = random() % 4;
+	printf("val : %d\n", val);
+	switch(val){
+		case 0: 
+			setPosX(posX+speed); // Est
+			break;
+		case 1: 
+			setPosX(posX-speed); // Ouest
+			break;
+		case 2: 
+			setPosY(posY-speed); // Nord
+			break;
+		case 3: 
+			setPosY(posY+speed); // Sud
+			break;
+	}
 }

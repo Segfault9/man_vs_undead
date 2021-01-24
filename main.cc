@@ -9,12 +9,18 @@
 #include "Personnage.hh"
 #include "Arene.hh"
 #include "Entite.hh"
+#include "Jeu.hh"
+
 
 int main(){
 
-	Arene a(10,10);
-	Zombie z(5,5);
-	a.spawn_zombie(z);
-	std::cout << a.toString() << endl;
+	Jeu j("Robert");
+
+	//std::cout << a.toString() << endl;
+
+	for(int i = 0 ; i < 5 ; i ++){
+		
+	//	std::cout << a.toString() << endl;
+	}
 	return 0;
 }

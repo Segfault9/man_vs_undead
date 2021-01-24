@@ -1,7 +1,6 @@
 #include "Arene.hh"
 
 
-
 Arene::Arene(int x, int y){
 
 	sizeX=x;
@@ -39,6 +38,17 @@ string Arene::toString(){
 
 void Arene::spawn_zombie(Zombie z){
 	arene[z.getPosX()][z.getPosY()] = 2;
+}
+
+void Arene::maj(Zombie z){
+	for(int i = 0 ; i < sizeX ; i++){
+		for(int j = 0 ; j < sizeY ; j++){
+			if(i == z.getPosX() && j==z.getPosY()){
+				arene[i][j] = 2;
+			}
+			
+		}
+	}
 }
 
 
