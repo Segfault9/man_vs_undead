@@ -14,3 +14,12 @@ string Gun::toString(){
 	res = "Je suis un " + name +", munition : " + to_string(munition);
 	return res;
 }
+
+void Gun::tirer(){
+
+}
+
+void Gun::modifPlayer(Personnage *p){
+	p.range = 2;
+
+}

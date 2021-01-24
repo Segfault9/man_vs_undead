@@ -6,7 +6,7 @@ using namespace std;
 
 #include "Arme.hh"
 
-class Joueur {
+class Joueur: public Entite {
 	protected :
       string nom;
 		  int PV;

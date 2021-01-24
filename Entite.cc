@@ -1,8 +1,8 @@
 #include "Entite.hh"
 
-Entite::Entite(string name, int x, int y){
-	posX = x;
-	posY = y;
+Entite::Entite(string name, Entite::Position p){
+	pos.x = p.x;
+	pos.y = p.y;
 	nom = name;
 }
 
@@ -12,18 +12,12 @@ Entite::Entite(string name){
 
 Entite::~Entite(){}
 
-int Entite::getPosX(){
-	return posX;
+
+Position Entite::getPosition(){
+	return pos;
 }
 
-int Entite::getPosY(){
-	return posY;
-}
-
-void Entite::setPosX(int x){
-	posX += x;
-}
-
-void Entite::setPosY(int y){
-	posY += y;
+Position Entite::setPosition(Entite::Position position){
+	pos.x = position.x;
+	pos.y = position.y;
 }

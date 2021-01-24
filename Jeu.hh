@@ -7,7 +7,7 @@ using namespace std;
 #include "Arene.hh"
 #include "Personnage.hh"
 
-class Jeu {
+Public class Jeu {
 	private :
 		std::vector<Zombie> zombies;
 		Arene arene(int x, int y);

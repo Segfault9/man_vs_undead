@@ -4,12 +4,16 @@
 #include<string>
 using namespace std;
 
+struct Position{
+	int x;
+	int y;
+};
 
-class Entite {
+
+Public class Entite {
 	
 	protected:
-		int posX;
-		int posY;
+		Position pos; 
 		string nom;
 
 	public :
@@ -17,9 +21,7 @@ class Entite {
 		Entite(string name);
 		~Entite();
 
-		int getPosX();
-		int getPosY();
-		void setPosX(int x);
-		void setPosY(int y);
-
+		Position setPosition(Entite::Position position);
+		Position getPosition();
+	
 };
