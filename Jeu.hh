@@ -5,12 +5,12 @@
 using namespace std;
 #include "Zombie.hh"
 #include "Arene.hh"
-#include "Personnage.hh"
+#include "Joueur.hh"
 
-Public class Jeu {
+class Jeu {
 	private :
 		std::vector<Zombie> zombies;
-		Personnage p;
+		Joueur p;
 
 	public :
 

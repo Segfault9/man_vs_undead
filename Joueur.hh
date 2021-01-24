@@ -1,9 +1,8 @@
 #pragma once 
-
+#include"Entite.hh"
 #include<vector>
 #include<string>
 using namespace std;
-
 #include "Arme.hh"
 
 class Joueur: public Entite {
@@ -12,12 +11,16 @@ class Joueur: public Entite {
 		  int PV;
       int score;
       int vie;
-      vector<Arme> armes;
+      int damage;
+      //int range;
+      //vector <Arme> armes;
 
 	public:
   		Joueur(std::string name);
+      Joueur(string name, Position pos);
+      Joueur();
   		~Joueur();
-      Joueur(){};
+      //Joueur(){};
 
 
   		int getPV(); // Renvoie le nombre de PV du zombie
@@ -25,8 +28,9 @@ class Joueur: public Entite {
 
   		int mort(); // Renvoie 1 si le Joueur est mort, sinon 0
       void setNom(string name);
-
+      int getRange();
+      int attaque();
   		string toString();
-
+      int range;
 
 };

@@ -27,9 +27,10 @@ string Arene::toString(){
 					break;
 
 				case 1 : //obstacle 
-					res += "."
+					res += ".";
+					break;
 
-				case 2: //presence zombie
+				case 2 : //presence zombie
 					res += " Z ";
 					break; 
 
@@ -44,14 +45,18 @@ string Arene::toString(){
 
 //place zombie dans l'arene 
 void Arene::spawn_zombie(Zombie z){
-	arene[z.getPosX()][z.getPosY()] = 2;
+	Position zomb;
+	zomb= z.getPosition();
+	arene[zomb.x][zomb.y] = 2;
 }
 
 //place zombie dans l'arene 
 void Arene::maj(Zombie z){
+	Position zomb;
+	zomb= z.getPosition();
 	for(int i = 0 ; i < sizeX ; i++){
 		for(int j = 0 ; j < sizeY ; j++){
-			if(i == z.getPosX() && j==z.getPosY()){
+			if(i == zomb.x && j==zomb.y){
 				arene[i][j] = 2;
 			}
 			

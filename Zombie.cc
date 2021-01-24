@@ -8,6 +8,15 @@ using namespace std;
 
 int Zombie::cpt = 0;
 
+Zombie::Zombie(string name, Position pos): Entite(name, pos){
+  	PV=PV_MAX;
+  	speed=1;
+ 	damage=20;
+ 	id = cpt;
+ 	++cpt;
+  			
+}
+
 Zombie::Zombie(string name): Entite(name){
   	PV=PV_MAX;
   	speed=1;
@@ -17,9 +26,9 @@ Zombie::Zombie(string name): Entite(name){
   			
 }
 
-Zombie::Zombie(int x, int y):Entite("Zombie " + to_string(cpt), x,y){
+/*Zombie::Zombie(string name, int x, int y):Entite("Zombie " + to_string(cpt), pos.x, pos.y){
   			
-}
+}*/
 
 Zombie::Zombie():Entite("Zombie " + to_string(cpt)){
   	PV=PV_MAX;
@@ -66,22 +75,22 @@ int Zombie::mort(){
 	return 0;
 }
 
-void Zombie::move(int speed){
+/*void Zombie::move(int speed){
 	// Déplacement aléatoire
 	int val = random() % 4;
 	printf("val : %d\n", val);
 	switch(val){
 		case 0: 
-			setPosX(posX+speed); // Est
+			setPosition(pos.x+speed); // Est
 			break;
 		case 1: 
-			setPosX(posX-speed); // Ouest
+			setPosition(pos.x-speed); // Ouest
 			break;
 		case 2: 
-			setPosY(posY-speed); // Nord
+			setPosition(pos.y-speed); // Nord
 			break;
 		case 3: 
-			setPosY(posY+speed); // Sud
+			setPosition(pos.y+speed); // Sud
 			break;
 	}
-}
+}*/

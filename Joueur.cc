@@ -3,14 +3,18 @@
 using namespace std;
 #define PV_MAX 100
 
-Joueur::Joueur(string name){
-  	nom = name;
+Joueur::Joueur(string name, Position pos): Entite(name, pos){
+  	//nom = name;
   	printf("Création du Joueur...\n");
   	PV=100;
   	score=0;
   	vie = 5;
+    pos.x = 0;
+    pos.y=0;
   			
 }
+
+Joueur::Joueur(){}
 
 Joueur::~Joueur(){}
 
@@ -41,4 +45,12 @@ int Joueur::mort(){
 
 void Joueur::setNom(string name){
     nom = name; 
+}
+
+int Joueur::getRange(){
+  return range;
+}
+
+int Joueur::attaque(){
+  return damage;
 }

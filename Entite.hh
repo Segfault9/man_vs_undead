@@ -1,5 +1,5 @@
 #pragma once 
-
+#include <math.h>
 #include<vector>
 #include<string>
 using namespace std;
@@ -9,20 +9,25 @@ struct Position{
 	int y;
 };
 
+int getDistance(Position p1, Position p2);
 
 class Entite {
 	
 	protected:
-		Position pos; 
+		
 		string nom;
 
 	public :
-		Entite(string name, int x, int y);
+		Position pos; 
+		Entite(string name, Position pos);
 		Entite(string name);
+		Entite();
 		~Entite();
 
-		Position setPosition(Entite::Position position);
+		void setPosition(Position position);
 		Position getPosition();
-		int getDistance(Position p1, Position p2)
+		
+
+		
 	
 };

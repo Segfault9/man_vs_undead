@@ -1,6 +1,7 @@
-
+#include "Bombe.hh"
 #include "Arme.hh"
-
+#include "Entite.hh"
+#include "Joueur.hh"
 
 
 Arme::Arme(string n, int r, int d, int m){
@@ -11,6 +12,10 @@ Arme::Arme(string n, int r, int d, int m){
     munition = m;
 
 };
+
+Arme::Arme(){
+	
+}
 
 Arme::~Arme(){
 

@@ -1,6 +1,6 @@
 #include "Entite.hh"
 
-Entite::Entite(string name, Entite::Position p){
+Entite::Entite(string name, Position p){
 	pos.x = p.x;
 	pos.y = p.y;
 	nom = name;
@@ -10,6 +10,9 @@ Entite::Entite(string name){
 	nom = name;
 }
 
+Entite::Entite(){}
+
+
 Entite::~Entite(){}
 
 
@@ -17,12 +20,12 @@ Position Entite::getPosition(){
 	return pos;
 }
 
-Position Entite::setPosition(Entite::Position position){
+void Entite::setPosition(Position position){
 	pos.x = position.x;
 	pos.y = position.y;
 }
 
-int Entite::getDistance(Position p1, Position p2){
+int getDistance(Position p1, Position p2){
 
 	float distance, deltaX, deltaY;
 

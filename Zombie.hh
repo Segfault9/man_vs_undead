@@ -18,8 +18,10 @@ class Zombie : public Entite {
 
 	public:
   		Zombie(std::string name);
+      Zombie(string name, Position pos);
+
   		~Zombie();
-      Zombie(int x, int y);
+      //Zombie(string name, int x, int y);
       Zombie();
   		static int nb_zombies(); // Renvoie le nombre de zombie crées
 
