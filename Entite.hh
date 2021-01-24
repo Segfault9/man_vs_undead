@@ -10,7 +10,7 @@ struct Position{
 };
 
 
-Public class Entite {
+class Entite {
 	
 	protected:
 		Position pos; 
@@ -23,5 +23,6 @@ Public class Entite {
 
 		Position setPosition(Entite::Position position);
 		Position getPosition();
+		int getDistance(Position p1, Position p2)
 	
 };

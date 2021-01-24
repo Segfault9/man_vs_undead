@@ -15,4 +15,5 @@ class Personnage : public Joueur {
 		Personnage(){};
 		~Personnage();
 		int attaque();
+		int getRange();
 };

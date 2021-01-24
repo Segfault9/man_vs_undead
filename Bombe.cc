@@ -17,7 +17,7 @@ string Bombe::toString(){
 	return res;
 }
 
-void exploser(Personnage *p, vector <Zombie> z){
+void exploser(vector <Zombie> z){
 
 	vector <Zombie> :: iterator iter;
 	Position pos, zomb;
@@ -29,14 +29,7 @@ void exploser(Personnage *p, vector <Zombie> z){
 //On regarde la distance entre la bombe et le zombie, et on tue les Zombie si c'est dans la portée est ok
 	for(iter = z.begin(); iter != z.end(); ++iter){
 		
-		float distance, deltaX, deltaY;
-
-		zomb = z.getPosition(); //position zombie 
-
-		deltaX = pos.x - zomb.x;
-		deltaY = pos.y - zomb.y;
-
-		distance = floor(sqrtf(pow(deltaX, 2)+pow(deltaY, 2))); //on prend la partie entiere
+		int distance = Entite::getDistance(this.pos, z.pos);
 
 		if((int)distance <= range){
 			z.setPV(0); //si le zombie est dans la portée on le tue 

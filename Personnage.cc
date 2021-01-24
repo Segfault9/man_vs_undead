@@ -12,3 +12,7 @@ int Personnage::attaque(){
 	return damage;
 }
 
+int Personnage::getRange(){
+	return range;
+}
+
