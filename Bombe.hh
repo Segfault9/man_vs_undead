@@ -11,6 +11,7 @@ class Bombe : public Arme {
       Bombe(string name, int range, int damage, int munition);
       ~Bombe();
       void exploser();
+      void modifPlayer(Personnage *p);
       string toString();
 
 
