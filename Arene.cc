@@ -61,4 +61,9 @@ void Arene::maj(Zombie z){
 	}
 }
 
+void Arene::majJoueur(Joueur j){
+	Position pos = j.getPosition();
+	arene[pos.x][pos.y] = 1;
+}
+
 

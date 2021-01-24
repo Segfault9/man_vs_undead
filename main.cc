@@ -17,9 +17,8 @@ int main(){
 
 	//std::cout << a.toString() << endl;
 
-	for(int i = 0 ; i < 5 ; i ++){
-		
-	//	std::cout << a.toString() << endl;
-	}
+	j.spawner(5);
+	j.spawn_joueur(j.getJoueur());
+
 	return 0;
 }

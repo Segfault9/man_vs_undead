@@ -9,12 +9,14 @@ Joueur::Joueur(string name, Position pos): Entite(name, pos){
   	PV=100;
   	score=0;
   	vie = 5;
-    pos.x = 0;
-    pos.y=0;
-  			
 }
 
-Joueur::Joueur(){}
+
+Joueur::Joueur(){
+  pos.x=8;
+  pos.y=8;
+}
+
 
 Joueur::~Joueur(){}
 

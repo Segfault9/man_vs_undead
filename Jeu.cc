@@ -6,10 +6,15 @@ Arene arene(15,15);
 
 Jeu::Jeu(string name){
 
-	//j.setNom(name);
+	j.setNom(name);
 
-	// Créer 5 zombies
-	for(int i = 0 ; i < 5 ; i++){
+}
+
+Jeu::~Jeu(){}
+
+
+void Jeu::spawner(int nb_zombie){
+	for(int i = 0 ; i < nb_zombie ; i++){
 		Zombie z;
 		zombies.push_back(z); // Ajouter les zombies à la liste
 		arene.maj(z); // Faire apparaître le zombie
@@ -17,4 +22,11 @@ Jeu::Jeu(string name){
 	}
 }
 
-Jeu::~Jeu(){}
+void Jeu::spawn_joueur(Joueur j){
+			arene.majJoueur(j);
+			std::cout << arene.toString() << endl;
+}
+
+Joueur Jeu::getJoueur(){
+	return j;
+}
