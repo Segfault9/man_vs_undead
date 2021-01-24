@@ -12,7 +12,6 @@ class Whitewalker : public Zombie {
       Whitewalker(string name);
       ~Whitewalker();
 
-      void soigner(Zombie z);
-
+      
 
 };

@@ -8,7 +8,7 @@ using namespace std;
 
 class Zombie : public Entite {
 	protected :
-		string nom;
+		  string nom;
   		int PV;
   		int speed;
   		int damage;
@@ -17,12 +17,13 @@ class Zombie : public Entite {
   		vector<Zombie> zombies;
 
 	public:
+      Zombie();
   		Zombie(std::string name);
       Zombie(string name, Position pos);
 
   		~Zombie();
       //Zombie(string name, int x, int y);
-      Zombie();
+      
   		static int nb_zombies(); // Renvoie le nombre de zombie crées
 
   		int getPV(); // Renvoie le nombre de PV du zombie

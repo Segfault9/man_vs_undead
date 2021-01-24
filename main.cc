@@ -6,7 +6,6 @@
 #include "Bombe.hh"
 #include "Gun.hh"
 #include "Joueur.hh"
-#include "Personnage.hh"
 #include "Arene.hh"
 #include "Entite.hh"
 #include "Jeu.hh"
@@ -14,13 +13,12 @@
 
 int main(){
 
-	Jeu j("Robert");
+    Jeu j("Robert");
 
-	//std::cout << a.toString() << endl;
+    //std::cout << a.toString() << endl;
 
-	for(int i = 0 ; i < 5 ; i ++){
-		
-	//	std::cout << a.toString() << endl;
-	}
-	return 0;
+    j.spawner(5);
+    j.spawn_joueur(j.getJoueur());
+
+    return 0;
 }
