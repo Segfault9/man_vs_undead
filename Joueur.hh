@@ -19,7 +19,7 @@ class Joueur: public Entite {
   		Joueur(std::string name);
       Joueur(string name, Position pos);
       Joueur();
-      
+
   		~Joueur();
       //Joueur(){};
 

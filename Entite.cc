@@ -1,7 +1,7 @@
 #include "Entite.hh"
 #include <stdlib.h>
-#define sizeX 15
-#define sizeY 15
+#define sizeX 16
+#define sizeY 16
 
 Entite::Entite(string name, Position p){
 	pos.x = p.x;

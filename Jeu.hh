@@ -21,4 +21,8 @@ class Jeu {
 	void spawner(int nb_zombie);
 	void spawn_joueur(Joueur j);
 	Joueur getJoueur();
+	void deplacerZombie(vector<Zombie> zombies, int nb_zombie);
+
+	void print_arene();
+	void test();
 };

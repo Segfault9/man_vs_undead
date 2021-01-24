@@ -5,8 +5,8 @@
 using namespace std;
 #include "Zombie.hh"
 #include "Joueur.hh"
-#define size_X 10
-#define size_Y 10
+#define size_X 16
+#define size_Y 16
 
 class Arene {
 	private :

@@ -53,7 +53,7 @@ void Arene::maj(Zombie z){
 	zomb= z.getPosition();
 	for(int i = 0 ; i < sizeX ; i++){
 		for(int j = 0 ; j < sizeY ; j++){
-			if(i == zomb.x && j==zomb.y){
+			if( (i == zomb.x && j==zomb.y) && (arene[i][j] == 0) ){
 				arene[i][j] = 2;
 			}
 			

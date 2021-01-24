@@ -15,10 +15,7 @@ int main(){
 
 	Jeu j("Robert");
 
-	//std::cout << a.toString() << endl;
-
-	j.spawner(5);
-	j.spawn_joueur(j.getJoueur());
-
+	j.test();
+	
 	return 0;
 }

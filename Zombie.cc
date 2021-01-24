@@ -26,9 +26,6 @@ Zombie::Zombie(string name): Entite(name){
   			
 }
 
-/*Zombie::Zombie(string name, int x, int y):Entite("Zombie " + to_string(cpt), pos.x, pos.y){
-  			
-}*/
 
 Zombie::Zombie():Entite("Zombie " + to_string(cpt)){
 	printf("Création zombie...\n");
@@ -76,22 +73,30 @@ int Zombie::mort(){
 	return 0;
 }
 
-/*void Zombie::move(int speed){
+void Zombie::move(int speed){
 	// Déplacement aléatoire
 	int val = random() % 4;
-	printf("val : %d\n", val);
+	Position position;
+	position = getPosition();
 	switch(val){
 		case 0: 
-			setPosition(pos.x+speed); // Est
+			position.x+=speed;
+			setPosition(position); // Est
 			break;
 		case 1: 
-			setPosition(pos.x-speed); // Ouest
+			position.x-=speed;
+
+			setPosition(position); // Ouest
 			break;
 		case 2: 
-			setPosition(pos.y-speed); // Nord
+			position.y-=speed;
+
+			setPosition(position); // Nord
 			break;
 		case 3: 
-			setPosition(pos.y+speed); // Sud
+			position.y+=speed;
+
+			setPosition(position); // Sud
 			break;
 	}
-}*/
+}

@@ -1,12 +1,12 @@
 #include "Joueur.hh"
 
 using namespace std;
-#define PV_MAX 100
+#define PV_MAX 500
 
 Joueur::Joueur(string name, Position pos): Entite(name, pos){
   	//nom = name;
   	printf("Création du Joueur...\n");
-  	PV=100;
+  	PV=PV_MAX;
   	score=0;
   	vie = 5;
 }
