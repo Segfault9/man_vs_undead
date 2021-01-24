@@ -75,22 +75,19 @@ int Zombie::mort(){
 	return 0;
 }
 
-/*void Zombie::move(int speed){
-	// Déplacement aléatoire
-	int val = random() % 4;
-	printf("val : %d\n", val);
-	switch(val){
-		case 0: 
-			setPosition(pos.x+speed); // Est
-			break;
-		case 1: 
-			setPosition(pos.x-speed); // Ouest
-			break;
-		case 2: 
-			setPosition(pos.y-speed); // Nord
-			break;
-		case 3: 
-			setPosition(pos.y+speed); // Sud
-			break;
-	}
-}*/
+void Zombie::move_up(){
+  pos.x -= speed; 
+}
+
+void Zombie::move_down(){
+  pos.x += speed; 
+}
+
+void Zombie::move_left(){
+  pos.x -= speed; 
+}
+
+void Zombie::move_right(){
+  pos.x += speed; 
+}
+

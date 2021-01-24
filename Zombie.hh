@@ -30,7 +30,10 @@ class Zombie : public Entite {
   		void setPV(int pv);
   		int mort(); // Renvoie 1 si le zombie est mort, sinon 0
 
-      void move(int speed);
+      void move_up();
+      void move_down();
+      void move_left();
+      void move_right();
       
   		string toString();
 
