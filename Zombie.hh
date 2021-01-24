@@ -14,7 +14,7 @@ class Zombie : public Entite {
   		int damage;
       int id;
   		static int cpt;
-  		vector<Zombie> zombies;
+  		//vector<Zombie> zombies;
 
 	public:
       Zombie();

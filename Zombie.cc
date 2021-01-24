@@ -66,6 +66,7 @@ void Zombie::setPV(int pv){
 	PV=pv;
 }
 
+// 
 int Zombie::mort(){
 
 	if(PV <= 0){
@@ -75,19 +76,38 @@ int Zombie::mort(){
 	return 0;
 }
 
+//mouvement du zombie 
+
 void Zombie::move_up(){
-  pos.x -= speed; 
+	if(pos.y > 0+speed)//si en faisant -speed je suis toujours dans le fenetre je me deplace
+		pos.y -= speed;
+  	else //sinon je reste la ou je suis
+    	pos.y = pos.y;
+   
 }
 
 void Zombie::move_down(){
-  pos.x += speed; 
+	if(pos.y <= 899-speed)//si en faisant +speed je suis toujours dans le fenetre je me deplace
+		pos.y += speed;
+  	else //sinon je reste la ou je suis
+    	pos.y = pos.y;
+  pos.y += speed; 
 }
 
 void Zombie::move_left(){
-  pos.x -= speed; 
+ 	if(pos.x > 0+speed)//si en faisant -speed je suis toujours dans le fenetre je me deplace
+		pos.x -= speed;
+  	else //sinon je reste la ou je suis
+    	pos.x = pos.x; 
 }
 
 void Zombie::move_right(){
+	if(pos.x <= 1124-speed)//si en faisant +speed je suis toujours dans le fenetre je me deplace
+    	pos.x += speed; 
+  	else //sinon je reste la ou je suis
+    	pos.x = pos.x;
   pos.x += speed; 
 }
+
+
 
