@@ -9,10 +9,11 @@
 #include "Arene.hh"
 #include "Entite.hh"
 #include "Jeu.hh"
+#include "Fenetre.hh"
 #include <SFML/Graphics.hpp>
 
 
-int main(){
+int main(int argc, char *argv[]){
 
     Jeu j("Robert");
 
@@ -22,9 +23,9 @@ int main(){
    // j.spawn_joueur(j.getJoueur());
 
 
-    sf::RenderWindow window(sf::VideoMode(1500, 900), "Man vs Undead");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+    sf::RenderWindow window(sf::VideoMode(1125, 900), "Man vs Undead");
+    window.setFramerateLimit(60);
+    Fenetre fenetre;
 
     while (window.isOpen())
     {
@@ -36,7 +37,7 @@ int main(){
         }
 
         window.clear();
-        window.draw(shape);
+       	fenetre.drawBackground(window);
         window.display();
     }
 
