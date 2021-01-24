@@ -10,8 +10,6 @@ using namespace std;
 Public class Jeu {
 	private :
 		std::vector<Zombie> zombies;
-		Arene arene(int x, int y);
-
 		Personnage p;
 
 	public :
