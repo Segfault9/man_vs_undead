@@ -31,6 +31,7 @@ Zombie::Zombie(string name): Entite(name){
 }*/
 
 Zombie::Zombie():Entite("Zombie " + to_string(cpt)){
+	printf("Création zombie...\n");
   	PV=PV_MAX;
   	speed=1;
  	damage=20;

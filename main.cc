@@ -6,7 +6,6 @@
 #include "Bombe.hh"
 #include "Gun.hh"
 #include "Joueur.hh"
-#include "Personnage.hh"
 #include "Arene.hh"
 #include "Entite.hh"
 #include "Jeu.hh"
