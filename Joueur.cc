@@ -54,3 +54,19 @@ int Joueur::getRange(){
 int Joueur::attaque(){
   return damage;
 }
+
+void Joueur::move_up(){
+  pos.x -= 1; 
+}
+
+void Joueur::move_down(){
+  pos.x += 1; 
+}
+
+void Joueur::move_left(){
+  pos.x -= 1; 
+}
+
+void Joueur::move_right(){
+  pos.x += 1; 
+}

@@ -23,7 +23,7 @@ public:
 private:
  
 //Background
-	sf::Texture backgroundTexture;
-	sf::Sprite background;
+	sf::Texture backgroundTexture, playerTexture, zombieTexture;
+	sf::Sprite background, im_player, im_zombie;
  
 };

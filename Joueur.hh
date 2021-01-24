@@ -32,5 +32,9 @@ class Joueur: public Entite {
       int attaque();
   		string toString();
       int range;
+      void move_up();
+      void move_down();
+      void move_left();
+      void move_right();
 
 };
