@@ -30,9 +30,10 @@ Joueur Jeu::getJoueur(){
 }
 
 
-void Jeu::deplacerZombie(vector<Zombie> z){
-	move(z);
+void Jeu::deplacerZombie(vector<Zombie> &z){
+	z[0].move_down();
 	arene.maj(z);
+	printf("Moved\n");
 }
 
 
@@ -42,7 +43,7 @@ void Jeu::print_arene(){
 
 void Jeu::test(){
 	spawn_joueur(j);
-	spawner(1);
+	spawner(2);
 	print_arene();
 
 	for(int i = 0 ; i < 10 ; i++){

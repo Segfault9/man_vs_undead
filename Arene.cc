@@ -48,14 +48,9 @@ string Arene::toString(){
 void Arene::maj(vector<Zombie> z){
 	Position zomb;
 
-	for(int i = 0 ; i < sizeX ; i++){	
-		for(int j = 0 ; j < sizeY ; j++){
-			arene[i][j] = 0;
-		}
-	}
-
 	for(unsigned int k = 0 ; k < z.size() ; k++){
 		zomb= z[k].getPosition();
+		//arene[z[k].getPositionAvant().x][z[k].getPositionAvant().y] = 0;
 		arene[zomb.x][zomb.y] = 2;			
 	}
 
