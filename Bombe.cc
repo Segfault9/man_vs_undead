@@ -20,8 +20,8 @@ string Bombe::toString(){
 	return res;
 }
 
-void modifPlayer(Joueur *p){
-	int PV = p->getPV(); 
+void Bombe::modifPlayer(Joueur p){
+	int PV = p.getPV(); 
 
 	if((PV % 2) != 0) //Si la division par 2 n'est pas un entiere
 		PV = floor(PV/2) + 1;  //on prend la partie entiere et on ajoute 1 
@@ -29,11 +29,11 @@ void modifPlayer(Joueur *p){
 		PV = PV/2;
 
 	//mettre les pv 
-	p->setPV(PV); 
+	p.setPV(PV); 
 
 }
 
-void exploser(vector <Zombie> z, Joueur *p){
+void Bombe::exploser(vector <Zombie> & z, Joueur p){
 
 /*	vector <Zombie> :: iterator iter;
 
@@ -55,7 +55,7 @@ void exploser(vector <Zombie> z, Joueur *p){
 	modifPlayer(p);
 	//munition = 0;
 	for(i=0; i<z.size(); i++){
-		int distance = getDistance(p->pos, z[i].pos);
+		int distance = getDistance(p.pos, z[i].pos);
 
 		if((int)distance <= 100)
 			z[i].setPV(0); //si le zombie est dans la portée on le 

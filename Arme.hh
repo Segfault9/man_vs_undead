@@ -21,6 +21,7 @@ class Arme : public Entite {
       ~Arme();
       string toString();
       void modifPlayer(); 
+      //virtual void modifPlayer() const=0; 
       int getDamage();
 
 

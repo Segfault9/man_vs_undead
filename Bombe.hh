@@ -12,8 +12,8 @@ class Bombe : public Arme {
   public:
       Bombe(string name, int range, int damage, int munition);
       ~Bombe();
-      void exploser(vector <Zombie> z,Joueur p);
-      void modifPlayer(Joueur *p);
+      void exploser(vector <Zombie> & z, Joueur p);
+      void modifPlayer(Joueur p);
       string toString();
 
 

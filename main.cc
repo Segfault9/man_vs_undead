@@ -25,6 +25,9 @@ int main(int argc, char *argv[]){
     pos_init.x = 0; 
     pos_init.y = 0;
     Joueur p(name, pos_init);
+    Zombie z;
+    std::vector <Zombie> zomb;
+
     
     //Joueur *pt = p;
     Gun g("gun", 2*p.range, p.damage, MUNITION_MAX);
@@ -41,6 +44,7 @@ int main(int argc, char *argv[]){
         while (window.pollEvent(event))
         {
             //fenetre.command(window, event, p, g, bomb, z);
+            fenetre.command(window, event, p, g, bomb, zomb);
         }
 
         window.clear();
