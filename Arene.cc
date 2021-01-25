@@ -1,8 +1,7 @@
 #include "Arene.hh"
 
 Arene::Arene(int x, int y){
-	printf("Création de l'arène...\n");
-
+	std::cout<<"Création de l'arène..."<<std::endl;
 	sizeX=x;
 	sizeY=y;
 
@@ -50,20 +49,20 @@ void Arene::maj(vector<Zombie> & z){
 
 	for(unsigned int k = 0 ; k < z.size() ; k++){
 		prec=z[k].getPositionAvant(); 
-		printf("prec x %d y %d\n", prec.x, prec.y );
+		//printf("prec x %d y %d\n", prec.x, prec.y );
 		zomb= z[k].getPosition();
 		arene[prec.x][prec.y] = 0;
-		printf("prev %d\n",arene[prec.x][prec.y]);
+		//printf("prev %d\n",arene[prec.x][prec.y]);
 		arene[zomb.x][zomb.y] = 2;
-		printf("now %d\n",arene[zomb.x][zomb.y]);
-		for(int i=0; i<15; i++){
+		//printf("now %d\n",arene[zomb.x][zomb.y]);
+		/*for(int i=0; i<15; i++){
 			for(int j=0; j<15; j++){
 				printf("%d", arene[i][j] );
 
 			}
 			printf("\n");
 
-		}
+		}*/
 
 
 	}
@@ -76,10 +75,10 @@ void Arene::majJoueur(Joueur j){
 	Position posPrec;
 	posPrec.x =0;
 	posPrec.y =0;
-	printf("Arene x %d y %d\n", posPrec.x, posPrec.y);
+	//printf("Arene x %d y %d\n", posPrec.x, posPrec.y);
 	posPrec=j.getPositionAvant();
 	Position pos = j.getPosition();
-	printf("Arene x %d y %d\n", posPrec.x, posPrec.y);
+	//printf("Arene x %d y %d\n", posPrec.x, posPrec.y);
 	arene[posPrec.x][posPrec.y]=0;
 	arene[pos.x][pos.y] = 1;
 }

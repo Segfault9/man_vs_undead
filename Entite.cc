@@ -13,7 +13,7 @@ Entite::Entite(string name){
 	nom = name;
 	pos.x = rand()%sizeX;
 	pos.y = rand()%sizeY;
-	printf("%d\n",pos.x);
+	//printf("%d\n",pos.x);
 }
 
 Entite::Entite(){}
@@ -23,7 +23,7 @@ Entite::~Entite(){}
 
 
 Position Entite::getPosition(){
-	printf("%d %d\n", pos.x, pos.y );
+	//printf("%d %d\n", pos.x, pos.y );
 	return pos;
 }
 
@@ -46,7 +46,7 @@ int getDistance(Position p1, Position p2){
 
 
 Position Entite::getPositionAvant(){
-	printf("fonction jeu : position avant x %d y %d \n", posAvant.x, posAvant.y);
+	//printf("fonction jeu : position avant x %d y %d \n", posAvant.x, posAvant.y);
 
 	return posAvant;
 }

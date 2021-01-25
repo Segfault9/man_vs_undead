@@ -33,7 +33,17 @@ Joueur Jeu::getJoueur(){
 void Jeu::deplacerZombie(vector<Zombie> &z, Arene a){
 	move(z);
 	a.maj(z);
-	printf("Moved : deplacerZombie\n");
+	//printf("Moved : deplacerZombie\n");
+}
+
+void Jeu::kill(Joueur j, vector<Zombie> & z){
+	int nb_kill=0;
+	for(unsigned int i=0; i<z.size(); i++){
+		if(z[i].mort()){ //si mort = 1, donc mort
+			nb_kill++;
+		}
+	}
+	j.setScore(nb_kill);
 }
 
 
@@ -43,23 +53,23 @@ void Jeu::print_arene(Arene a){
 
 void Jeu::test(){
 
-	Position Avant;
-	Avant= j.getPositionAvant();
+	//Position Avant;
+	//Avant= j.getPositionAvant();
 	//printf("fonction jeu : position avant x %d y %d \n", Avant.x, Avant.y);
 	Arene arene(15,15);
 	spawn_joueur(j, arene);
-	spawner(2);
+	spawner(15);
 	print_arene(arene);
 
 
-	for(int i = 0 ; i < 10 ; i++){
+	for(int i = 0 ; i < 1000 ; i++){
 
 		deplacerZombie(zombies, arene);
 		//zombies[0].move(1);
 		//std::cout <<zombies[0].toString();
-		printf("test1\n");
+		
 		arene.maj(zombies);
-		printf("test2\n");
+		
 		j.move();
 
 		arene.majJoueur(j);		

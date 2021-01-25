@@ -23,7 +23,7 @@ class Jeu {
 	void spawn_joueur(Joueur j, Arene a);
 	Joueur getJoueur();
 	void deplacerZombie(vector<Zombie> &zombies, Arene a);
-
+	void kill(Joueur j, vector<Zombie> & z);
 	void print_arene(Arene a);
 	void test();
 

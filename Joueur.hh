@@ -40,5 +40,6 @@ class Joueur: public Entite {
       void move_left();
       void move_right();
       void move();
+      void setScore(int s);
 
 };

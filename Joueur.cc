@@ -5,7 +5,7 @@ using namespace std;
 
 Joueur::Joueur(string name, Position pos): Entite(name, pos){
   	//nom = name;
-  	printf("Création du Joueur...\n");
+    cout<<"Création du Joueur..."<<endl;
   	PV=PV_MAX;
   	score=0;
   	vie = 5;
@@ -32,6 +32,10 @@ string Joueur::toString()
 
 int Joueur::getPV(){
 	return PV;
+}
+
+void Joueur::setScore(int s){
+  score=s;
 }
 
 void Joueur::setPV(int pv){
@@ -126,7 +130,7 @@ void Joueur::move(){
 
   //scanf("%c", &c);
   cin >> c;
-  printf("test3\n");
+  //printf("test3\n");
   Position temp;
   switch(c){
     case 'z': //up4

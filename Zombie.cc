@@ -37,7 +37,7 @@ Zombie::Zombie(string name): Entite(name){
 
 
 Zombie::Zombie():Entite("Zombie " + to_string(cpt)){
-	printf("Création zombie...\n");
+  cout<<"Création zombie..."<<endl;
   PV=PV_MAX;
   speed=1;
  	damage=20;
@@ -148,7 +148,7 @@ void Zombie::move_right(){//3
 
 
 void move(vector<Zombie> & z){
-	printf("coucou\n");
+
   static std::default_random_engine _generator(std::chrono::system_clock::now().time_since_epoch().count());
   static std::uniform_int_distribution<int> _distribution(33,94);
   _distribution(_generator);
@@ -156,7 +156,7 @@ void move(vector<Zombie> & z){
 
   for(unsigned int i=0; i<z.size(); i++){ //move aléatoire pour chaque zombie
     int rand_move = rand()%4; //0 to 3 
-    printf("rand : %d\n", rand_move);
+    //printf("rand : %d\n", rand_move);
     z[i].posAvant = z[i].pos;
     switch(rand_move){
     case 0: // up
