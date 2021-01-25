@@ -185,6 +185,4 @@ void Zombie::attaque(Joueur *p){
   if(distance<= 5){
     p->setPV(pv-damage);
   }
-
-
 }

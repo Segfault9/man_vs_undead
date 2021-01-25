@@ -29,5 +29,5 @@ void Gun::tirer(int degat, Zombie *z, Joueur *p){
 }
 
 void Gun::modifPlayer(Joueur *p){
-	p->range = 2;
+	p->range = 2*p->range;
 }

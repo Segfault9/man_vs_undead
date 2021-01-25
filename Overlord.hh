@@ -10,6 +10,8 @@ class Overlord : public Zombie {
 
 	public:
   		Overlord(string name);
+  		Overlord();
+  		Overlord(string name, Position pos);
   		~Overlord();
 
   		void soigner(Zombie z);

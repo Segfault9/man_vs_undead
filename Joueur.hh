@@ -11,7 +11,7 @@ class Joueur: public Entite {
 		  int PV;
       int score;
       int vie;
-      int damage;
+      int damage=50;
       //int range;
       //vector <Arme> armes;
 
@@ -32,7 +32,7 @@ class Joueur: public Entite {
       int getRange();
       int attaque();
   		string toString();
-      int range;
+      int range=25;
       void move_up();
       void move_down();
       void move_left();
