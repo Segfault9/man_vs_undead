@@ -42,18 +42,32 @@ void Jeu::print_arene(Arene a){
 }
 
 void Jeu::test(){
+
+	Position Avant;
+	Avant= j.getPositionAvant();
+	//printf("fonction jeu : position avant x %d y %d \n", Avant.x, Avant.y);
 	Arene arene(15,15);
 	spawn_joueur(j, arene);
 	spawner(2);
 	print_arene(arene);
 
+
 	for(int i = 0 ; i < 10 ; i++){
 
 		deplacerZombie(zombies, arene);
 		//zombies[0].move(1);
-		std::cout <<zombies[0].toString();
+		//std::cout <<zombies[0].toString();
+		printf("test1\n");
 		arene.maj(zombies);
-		arene.majJoueur(j);
+		printf("test2\n");
+		j.move();
+
+		arene.majJoueur(j);		
+
 		print_arene(arene);
+		
+		
+
+		
 	}
 }

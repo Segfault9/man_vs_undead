@@ -5,6 +5,7 @@
 using namespace std;
 #include "Zombie.hh"
 #include "Arene.hh"
+#include "Entite.hh"
 #include "Joueur.hh"
 
 class Jeu {

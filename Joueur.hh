@@ -2,6 +2,7 @@
 #include"Entite.hh"
 #include<vector>
 #include<string>
+#include<iostream>
 using namespace std;
 #include "Arme.hh"
 
@@ -38,5 +39,6 @@ class Joueur: public Entite {
       void move_down();
       void move_left();
       void move_right();
+      void move();
 
 };

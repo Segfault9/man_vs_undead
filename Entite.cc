@@ -46,6 +46,8 @@ int getDistance(Position p1, Position p2){
 
 
 Position Entite::getPositionAvant(){
+	printf("fonction jeu : position avant x %d y %d \n", posAvant.x, posAvant.y);
+
 	return posAvant;
 }
 

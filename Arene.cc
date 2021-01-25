@@ -73,11 +73,15 @@ void Arene::maj(vector<Zombie> & z){
 }
 
 void Arene::majJoueur(Joueur j){
+	Position posPrec;
+	posPrec.x =0;
+	posPrec.y =0;
+	printf("Arene x %d y %d\n", posPrec.x, posPrec.y);
+	posPrec=j.getPositionAvant();
 	Position pos = j.getPosition();
+	printf("Arene x %d y %d\n", posPrec.x, posPrec.y);
+	arene[posPrec.x][posPrec.y]=0;
 	arene[pos.x][pos.y] = 1;
 }
 
-void Arene::reset(Position p) {
-	arene[p.x][p.y]=0;
-}
 

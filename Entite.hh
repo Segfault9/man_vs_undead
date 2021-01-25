@@ -5,8 +5,8 @@
 using namespace std;
 
 struct Position{
-	int x;
-	int y;
+	int x=0;
+	int y=0;
 };
 
 int getDistance(Position p1, Position p2);

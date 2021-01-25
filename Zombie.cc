@@ -133,7 +133,18 @@ void Zombie::move_left(){//2
 }
 
 void Zombie::move_right(){//3
-  
+  posAvant = pos; 
+  Position temp;
+	if(pos.x <= 15-1-speed){//si en faisant +speed je suis toujours dans le fenetre 935 je me deplace
+    temp.x =pos.x+ speed;
+    temp.y = pos.y;
+    setPosition(temp);
+  }else{
+    temp.y = pos.y;
+    temp.x=pos.x;
+    setPosition(temp);
+  } //sinon je reste la ou je suis
+    	
 }
 
 

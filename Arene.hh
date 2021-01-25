@@ -24,6 +24,5 @@ class Arene {
 		void majJoueur(Joueur j);
 		void spawn_zombie(Zombie z);
 		void maj(vector <Zombie> & z);
-		void reset(Position p);
 		string toString();
 };
