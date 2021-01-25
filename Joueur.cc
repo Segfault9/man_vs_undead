@@ -58,30 +58,62 @@ int Joueur::attaque(){
 }
 
 void Joueur::move_up(){
-  if(pos.y > 0)//si en faisant -1 je suis toujours dans le fenetre je me deplace
-    pos.y -= 1; 
-  else //sinon je reste la ou je suis
-    pos.y = pos.y;
+  posAvant = pos; 
+  Position temp;
+  if(pos.y > 0){//si en faisant -speed je suis toujours dans le fenetre je me deplace
+    temp.y=pos.y-1;
+    temp.x=pos.x;
+    setPosition(temp);
+  }else{
+    temp.y = pos.y;
+    temp.x=pos.x;
+    setPosition(temp);
+  } //sinon je reste la ou je suis
 }
 
 void Joueur::move_down(){
-  if(pos.y <= 899)//si en faisant +1 je suis toujours dans le fenetre je me deplace
-    pos.y += 1; 
-  else //sinon je reste la ou je suis
-    pos.y = pos.y;
+  posAvant = pos; 
+  Position temp;
+  if(pos.y <= 15-1-1){//si en faisant +speed je suis toujours dans le fenetre 670 je me deplace
+      printf("%d\n", pos.y);
+      temp.y= pos.y + 1;
+      temp.x=pos.x;
+      setPosition(temp);
+      printf("%d\n", pos.y);
+  }else{
+    temp.y = pos.y;
+    temp.x=pos.x;
+    setPosition(temp);
+  } //sinon je reste la ou je suis
+      
 }
 
 void Joueur::move_left(){
-  if(pos.x > 0)//si en faisant -1 je suis toujours dans le fenetre je me deplace
-    pos.x -= 1; 
-  else //sinon je reste la ou je suis
-    pos.x = pos.x;
+  posAvant = pos; 
+  Position temp;
+  if(pos.x > 0){
+    temp.x =pos.x-1;
+    temp.y = pos.y;
+    setPosition(temp);
+  }//si en faisant -speed je suis toujours dans le fenetre je me deplace
+  else{
+    temp.y = pos.y;
+    temp.x=pos.x;
+    setPosition(temp);
+  } //sinon je reste la ou je suis    
 }
 
 void Joueur::move_right(){
-  if(pos.x <= 1124)//si en faisant +1 je suis toujours dans le fenetre je me deplace
-    pos.x += 1; 
-  else //sinon je reste la ou je suis
-    pos.x = pos.x;
-  
+  posAvant = pos; 
+  Position temp;
+  if(pos.x <= 15-1-1){//si en faisant +speed je suis toujours dans le fenetre 935 je me deplace
+    temp.x =pos.x+1;
+    temp.y = pos.y;
+    setPosition(temp);
+  }else{
+    temp.y = pos.y;
+    temp.x=pos.x;
+    setPosition(temp);
+  } //sinon je reste la ou je suis      
 }
+

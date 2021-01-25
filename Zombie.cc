@@ -85,17 +85,26 @@ int Zombie::mort(){
 }
 
 //mouvement du zombie 
-/*
+
 void Zombie::move_up(){//0
-	if(pos.y > 0+speed)//si en faisant -speed je suis toujours dans le fenetre je me deplace
-		pos.y -= speed;
-  else //sinon je reste la ou je suis
-    pos.y = pos.y;
+  posAvant = pos; 
+  Position temp;
+	if(pos.y > 0+speed){//si en faisant -speed je suis toujours dans le fenetre je me deplace
+		temp.y=pos.y-speed;
+    temp.x=pos.x;
+    setPosition(temp);
+  }else{
+    temp.y = pos.y;
+    temp.x=pos.x;
+    setPosition(temp);
+  } //sinon je reste la ou je suis
+    
 }
 
 void Zombie::move_down(){ //1
+  posAvant = pos; 
   Position temp;
-	if(pos.y <= 670-speed){//si en faisant +speed je suis toujours dans le fenetre je me deplace
+	if(pos.y <= 15-1-speed){//si en faisant +speed je suis toujours dans le fenetre 670 je me deplace
 		  printf("%d\n", pos.y);
       temp.y= pos.y + speed;
       temp.x=pos.x;
@@ -108,21 +117,27 @@ void Zombie::move_down(){ //1
 }
 
 void Zombie::move_left(){//2
- 	if(pos.x > 0+speed)//si en faisant -speed je suis toujours dans le fenetre je me deplace
-		pos.x -= speed;
-  else //sinon je reste la ou je suis
-    	pos.x = pos.x; 
+  posAvant = pos; 
+  Position temp;
+ 	if(pos.x > 0+speed){
+    temp.x =pos.x- speed;
+    temp.y = pos.y;
+    setPosition(temp);
+  }//si en faisant -speed je suis toujours dans le fenetre je me deplace
+  else{
+    temp.y = pos.y;
+    temp.x=pos.x;
+    setPosition(temp);
+  } //sinon je reste la ou je suis   	
+
 }
 
 void Zombie::move_right(){//3
-	if(pos.x <= 935-speed)//si en faisant +speed je suis toujours dans le fenetre je me deplace
-    	pos.x += speed; 
- 	else //sinon je reste la ou je suis
-    	pos.x = pos.x;
+  
 }
-*/
-/*
-void move(vector<Zombie> z){
+
+
+void move(vector<Zombie> & z){
 	printf("coucou\n");
   static std::default_random_engine _generator(std::chrono::system_clock::now().time_since_epoch().count());
   static std::uniform_int_distribution<int> _distribution(33,94);
@@ -158,9 +173,9 @@ void move(vector<Zombie> z){
  // }
   }
 }
-*/
 
 
+/*
 void Zombie::move(int speed){
 	// Déplacement aléatoire
 	int val = random() % 4;
@@ -196,7 +211,7 @@ void Zombie::move(int speed){
       default:
         break;
 	}
-}
+}*/
 
 
 

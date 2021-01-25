@@ -11,6 +11,7 @@ using namespace std;
 #include <iostream>
 #include <random>
 #include "Joueur.hh"
+//#include "Arene.hh"
 
 //void move();
 
@@ -59,3 +60,4 @@ class Zombie : public Entite {
 
 };
 
+void move(vector<Zombie> & z);

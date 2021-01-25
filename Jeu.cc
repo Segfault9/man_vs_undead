@@ -2,7 +2,7 @@
 #include <vector>
 #include "Jeu.hh"
 
-Arene arene(15,15);
+
 
 Jeu::Jeu(string name){
 
@@ -20,9 +20,9 @@ void Jeu::spawner(int nb_zombie){
 	}
 }
 
-void Jeu::spawn_joueur(Joueur j){
-			arene.majJoueur(j);
-			std::cout << arene.toString() << endl;
+void Jeu::spawn_joueur(Joueur j, Arene a){
+			a.majJoueur(j);
+			std::cout << a.toString() << endl;
 }
 
 Joueur Jeu::getJoueur(){
@@ -30,28 +30,30 @@ Joueur Jeu::getJoueur(){
 }
 
 
-void Jeu::deplacerZombie(vector<Zombie> &z){
-	z[0].move(1);
-	arene.maj(z);
+void Jeu::deplacerZombie(vector<Zombie> &z, Arene a){
+	move(z);
+	a.maj(z);
 	printf("Moved : deplacerZombie\n");
 }
 
 
-void Jeu::print_arene(){
-	std::cout << arene.toString() << endl;
+void Jeu::print_arene(Arene a){
+	std::cout << a.toString() << endl;
 }
 
 void Jeu::test(){
-	spawn_joueur(j);
-	spawner(1);
-	print_arene();
+	Arene arene(15,15);
+	spawn_joueur(j, arene);
+	spawner(2);
+	print_arene(arene);
 
 	for(int i = 0 ; i < 10 ; i++){
-		deplacerZombie(zombies);
 
+		deplacerZombie(zombies, arene);
 		//zombies[0].move(1);
 		std::cout <<zombies[0].toString();
 		arene.maj(zombies);
-		print_arene();
+		arene.majJoueur(j);
+		print_arene(arene);
 	}
 }

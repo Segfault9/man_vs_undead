@@ -19,11 +19,11 @@ class Jeu {
 
 	~Jeu();
 	void spawner(int nb_zombie);
-	void spawn_joueur(Joueur j);
+	void spawn_joueur(Joueur j, Arene a);
 	Joueur getJoueur();
-	void deplacerZombie(vector<Zombie> &zombies);
+	void deplacerZombie(vector<Zombie> &zombies, Arene a);
 
-	void print_arene();
+	void print_arene(Arene a);
 	void test();
 
 

@@ -50,11 +50,22 @@ void Arene::maj(vector<Zombie> & z){
 
 	for(unsigned int k = 0 ; k < z.size() ; k++){
 		prec=z[k].getPositionAvant(); 
+		printf("prec x %d y %d\n", prec.x, prec.y );
 		zomb= z[k].getPosition();
 		arene[prec.x][prec.y] = 0;
 		printf("prev %d\n",arene[prec.x][prec.y]);
 		arene[zomb.x][zomb.y] = 2;
 		printf("now %d\n",arene[zomb.x][zomb.y]);
+		for(int i=0; i<15; i++){
+			for(int j=0; j<15; j++){
+				printf("%d", arene[i][j] );
+
+			}
+			printf("\n");
+
+		}
+
+
 	}
 
 	

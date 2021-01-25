@@ -6,6 +6,7 @@ using namespace std;
 #include "Entite.hh"
 #include "Zombie.hh"
 #include "Joueur.hh"
+
 #define size_X 935
 #define size_Y 670
 
