@@ -6,7 +6,6 @@
 #include <chrono>
 #include <random>
 
-
 using namespace std;
 #define PV_MAX 100
 
@@ -90,28 +89,45 @@ int Zombie::mort(){
 void Zombie::move_up(){//0
 	if(pos.y > 0+speed)//si en faisant -speed je suis toujours dans le fenetre je me deplace
 		pos.y -= speed;
+<<<<<<< HEAD
   else //sinon je reste la ou je suis
     pos.y = pos.y;
+=======
+  	else //sinon je reste la ou je suis
+    	pos.y = pos.y;
+>>>>>>> 4b21404f6f6c0903c3a3a058cee3b20d0170e699
    
 }
 
 void Zombie::move_down(){ //1
 	if(pos.y <= 899-speed)//si en faisant +speed je suis toujours dans le fenetre je me deplace
 		pos.y += speed;
+<<<<<<< HEAD
   else //sinon je reste la ou je suis
     pos.y = pos.y;
+=======
+  	else //sinon je reste la ou je suis
+    	pos.y = pos.y;
+  pos.y += speed; 
+>>>>>>> 4b21404f6f6c0903c3a3a058cee3b20d0170e699
 }
 
 void Zombie::move_left(){//2
  	if(pos.x > 0+speed)//si en faisant -speed je suis toujours dans le fenetre je me deplace
 		pos.x -= speed;
+<<<<<<< HEAD
   else //sinon je reste la ou je suis
     pos.x = pos.x; 
+=======
+  	else //sinon je reste la ou je suis
+    	pos.x = pos.x; 
+>>>>>>> 4b21404f6f6c0903c3a3a058cee3b20d0170e699
 }
 
 void Zombie::move_right(){//3
 	if(pos.x <= 1124-speed)//si en faisant +speed je suis toujours dans le fenetre je me deplace
     	pos.x += speed; 
+<<<<<<< HEAD
   else //sinon je reste la ou je suis
     	pos.x = pos.x;
 }
@@ -121,10 +137,22 @@ void Zombie::move(){
   
 
  // for(unsigned int i=0; i<z.size(); i++){ //move aléatoire pour chaque zombie
+=======
+  	else //sinon je reste la ou je suis
+    	pos.x = pos.x;
+}
+
+void Zombie::move(vector<Zombie> z){
+  _distribution(_generator);
+  
+
+  for(unsigned int i=0; i<z.size(); i++){ //move aléatoire pour chaque zombie
+>>>>>>> 4b21404f6f6c0903c3a3a058cee3b20d0170e699
     int rand_move = rand()%4; //0 to 3 
 
     switch(rand_move){
     case 0: // up
+<<<<<<< HEAD
         move_up();
       break;
 
@@ -138,13 +166,32 @@ void Zombie::move(){
 
     case 3://right
         move_right();
+=======
+      z[i].move_up();
+      break;
+
+    case 1: // down 
+      z[i].move_down();
+      break;
+
+    case 2: //left
+      z[i].move_left();
+      break;
+
+    case 3://right
+      z[i].move_right();
+>>>>>>> 4b21404f6f6c0903c3a3a058cee3b20d0170e699
       break;
 
     default: 
       break;
 
     }  
+<<<<<<< HEAD
  // }
+=======
+  }
+>>>>>>> 4b21404f6f6c0903c3a3a058cee3b20d0170e699
 }
 
 
@@ -177,6 +224,7 @@ void Zombie::move(int speed){
 	}
 }
 */
+<<<<<<< HEAD
 
 void Zombie::attaque(Joueur *p){
 
@@ -186,3 +234,5 @@ void Zombie::attaque(Joueur *p){
     p->setPV(pv-damage);
   }
 }
+=======
+>>>>>>> 4b21404f6f6c0903c3a3a058cee3b20d0170e699
