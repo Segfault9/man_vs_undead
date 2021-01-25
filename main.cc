@@ -43,6 +43,7 @@ int main(int argc, char *argv[]){
         sf::Event event;
         while (window.pollEvent(event))
         {
+            /*command utilisateur*/ 
             //fenetre.command(window, event, p, g, bomb, z);
             fenetre.command(window, event, p, g, bomb, zomb);
         }
