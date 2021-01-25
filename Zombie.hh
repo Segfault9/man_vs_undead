@@ -10,7 +10,7 @@ using namespace std;
 #include <chrono>
 #include <iostream>
 #include <random>
-
+#include "Joueur.hh"
 
 class Zombie : public Entite {
 	protected :
@@ -47,8 +47,10 @@ class Zombie : public Entite {
       void move_right();
       void move();
 
-      
   		string toString();
+
+      //virtual void attaque();
+      void attaque(Joueur *p);
 
 
 };

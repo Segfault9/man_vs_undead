@@ -6,6 +6,7 @@
 #include <chrono>
 #include <random>
 
+
 using namespace std;
 #define PV_MAX 100
 
@@ -19,9 +20,9 @@ int Zombie::cpt = 0;
 Zombie::Zombie(string name, Position pos): Entite(name, pos){
   	PV=PV_MAX;
   	speed=1;
- 	damage=20;
- 	id = cpt;
- 	++cpt;
+ 	  damage=20;
+ 	  id = cpt;
+ 	  ++cpt;
   			
 }
 
@@ -89,30 +90,29 @@ int Zombie::mort(){
 void Zombie::move_up(){//0
 	if(pos.y > 0+speed)//si en faisant -speed je suis toujours dans le fenetre je me deplace
 		pos.y -= speed;
-  	else //sinon je reste la ou je suis
-    	pos.y = pos.y;
+  else //sinon je reste la ou je suis
+    pos.y = pos.y;
    
 }
 
 void Zombie::move_down(){ //1
 	if(pos.y <= 899-speed)//si en faisant +speed je suis toujours dans le fenetre je me deplace
 		pos.y += speed;
-  	else //sinon je reste la ou je suis
-    	pos.y = pos.y;
-  pos.y += speed; 
+  else //sinon je reste la ou je suis
+    pos.y = pos.y;
 }
 
 void Zombie::move_left(){//2
  	if(pos.x > 0+speed)//si en faisant -speed je suis toujours dans le fenetre je me deplace
 		pos.x -= speed;
-  	else //sinon je reste la ou je suis
-    	pos.x = pos.x; 
+  else //sinon je reste la ou je suis
+    pos.x = pos.x; 
 }
 
 void Zombie::move_right(){//3
 	if(pos.x <= 1124-speed)//si en faisant +speed je suis toujours dans le fenetre je me deplace
     	pos.x += speed; 
-  	else //sinon je reste la ou je suis
+  else //sinon je reste la ou je suis
     	pos.x = pos.x;
 }
 
@@ -177,3 +177,14 @@ void Zombie::move(int speed){
 	}
 }
 */
+
+void Zombie::attaque(Joueur *p){
+
+  int pv = p->getPV();
+  int distance = getDistance(pos, p->pos);
+  if(distance<= 5){
+    p->setPV(pv-damage);
+  }
+
+
+}
