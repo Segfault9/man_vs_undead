@@ -3,6 +3,7 @@
 #include<vector>
 #include<string>
 using namespace std;
+#include "Entite.hh"
 #include "Zombie.hh"
 #include "Joueur.hh"
 #define size_X 935
@@ -22,5 +23,6 @@ class Arene {
 		void majJoueur(Joueur j);
 		void spawn_zombie(Zombie z);
 		void maj(vector <Zombie> & z);
+		void reset(Position p);
 		string toString();
 };

@@ -66,4 +66,7 @@ void Arene::majJoueur(Joueur j){
 	arene[pos.x][pos.y] = 1;
 }
 
+void Arene::reset(Position p) {
+	arene[p.x][p.y]=0;
+}
 
