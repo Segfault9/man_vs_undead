@@ -1,2 +1,3 @@
-Code partiellement fonctionnel
-Le joueur et les zombies se déplace
+Code partiellement fonctionnel.
+
+Le joueur et les zombies se déplacent.
