@@ -45,7 +45,7 @@ string Arene::toString(){
 
 
 //place zombie dans l'arene 
-void Arene::maj(vector<Zombie> z){
+void Arene::maj(vector<Zombie> & z){
 	Position zomb, prec;
 
 	for(unsigned int k = 0 ; k < z.size() ; k++){

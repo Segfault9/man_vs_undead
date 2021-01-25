@@ -21,6 +21,6 @@ class Arene {
 		~Arene();
 		void majJoueur(Joueur j);
 		void spawn_zombie(Zombie z);
-		void maj(vector <Zombie> z);
+		void maj(vector <Zombie> & z);
 		string toString();
 };
