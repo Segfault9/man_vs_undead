@@ -4,25 +4,38 @@
 #include<string>
 using namespace std;
 #include "Entite.hh"
+#include <time.h>
+#include <stdlib.h>
+#include <ctime>
+#include <chrono>
+#include <iostream>
+#include <random>
+#include "Joueur.hh"
 
 
 class Zombie : public Entite {
 	protected :
-		string nom;
-  		int PV;
+		  string nom;
+  		
   		int speed;
   		int damage;
       int id;
   		static int cpt;
   		vector<Zombie> zombies;
 
+  private : 
+      static std::default_random_engine _generator;
+      static std::uniform_int_distribution<int> _distribution;
+
 	public:
+      int PV;
+      Zombie();
   		Zombie(std::string name);
       Zombie(string name, Position pos);
 
   		~Zombie();
       //Zombie(string name, int x, int y);
-      Zombie();
+      
   		static int nb_zombies(); // Renvoie le nombre de zombie crées
 
   		int getPV(); // Renvoie le nombre de PV du zombie
@@ -36,5 +49,10 @@ class Zombie : public Entite {
       void move_right();
   		string toString();
 
+      //virtual void attaque();
+      void attaque(Joueur *p);
+
 
 };
+
+void move(vector<Zombie> z);

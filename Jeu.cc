@@ -29,12 +29,9 @@ Joueur Jeu::getJoueur(){
 	return j;
 }
 
-void Jeu::deplacerZombie(vector<Zombie> z){
-	for(unsigned int i = 0 ; i < z.size() ; i++){
-		std::cout << z[i].toString() << endl;
-		z[i].move();
-	}
 
+void Jeu::deplacerZombie(vector<Zombie> z){
+	move(z);
 	arene.maj(z);
 }
 

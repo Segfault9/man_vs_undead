@@ -1,6 +1,7 @@
 CC=g++
+OBJ= $(SRC:.cc=.o)
 CCFLAGS= -Wall -Werror -std=c++14 -g
-LIBFLAGS= 
+LIBFLAGS= -lsfml-system -lsfml-window -lsfml-graphics 
 SRC= $(wildcard *.cc)
 OBJ= $(SRC:.cc=.o)
 TST_DIR=tests/
@@ -17,7 +18,7 @@ testcase :
 	cd $(TST_DIR) ;  make
 
 $(EXEC): $(OBJ)
-	$(CC) $(LIBFLAGS) $^ -o $@  
+	$(CC) $^ -o $@ $(LIBFLAGS)
 
 %.o: %.cc
 	$(CC) $(CCFLAGS) -o $@ -c $<

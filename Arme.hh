@@ -20,7 +20,8 @@ class Arme : public Entite {
       Arme();
       ~Arme();
       string toString();
-      virtual void modifPlayer() const=0; 
+      void modifPlayer(); 
+      int getDamage();
 
 
 };

@@ -13,7 +13,8 @@ class Gun : public Arme {
       ~Gun();
       string toString();
       void modifPlayer(Joueur *p);
-      void tirer(int degat, Zombie *z, Joueur *p);
+      //void tirer(int degat, Zombie *z, Joueur *p);
+      void tirer(int degat, Zombie z, Joueur p);
 
 
 };

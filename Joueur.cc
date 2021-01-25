@@ -56,3 +56,32 @@ int Joueur::getRange(){
 int Joueur::attaque(){
   return damage;
 }
+
+void Joueur::move_up(){
+  if(pos.y > 0)//si en faisant -1 je suis toujours dans le fenetre je me deplace
+    pos.y -= 1; 
+  else //sinon je reste la ou je suis
+    pos.y = pos.y;
+}
+
+void Joueur::move_down(){
+  if(pos.y <= 899)//si en faisant +1 je suis toujours dans le fenetre je me deplace
+    pos.y += 1; 
+  else //sinon je reste la ou je suis
+    pos.y = pos.y;
+}
+
+void Joueur::move_left(){
+  if(pos.x > 0)//si en faisant -1 je suis toujours dans le fenetre je me deplace
+    pos.x -= 1; 
+  else //sinon je reste la ou je suis
+    pos.x = pos.x;
+}
+
+void Joueur::move_right(){
+  if(pos.x <= 1124)//si en faisant +1 je suis toujours dans le fenetre je me deplace
+    pos.x += 1; 
+  else //sinon je reste la ou je suis
+    pos.x = pos.x;
+  
+}

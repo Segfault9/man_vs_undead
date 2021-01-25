@@ -10,8 +10,8 @@ using namespace std;
 #define PV_MAX 100
 
 // obtain a seed from the system clock:
-//std::default_random_engine Zombie::_generator(std::chrono::system_clock::now().time_since_epoch().count());
-//std::uniform_int_distribution<int> Zombie::_distribution(33,94);
+std::default_random_engine Zombie::_generator(std::chrono::system_clock::now().time_since_epoch().count());
+std::uniform_int_distribution<int> Zombie::_distribution(33,94);
 
 int Zombie::cpt = 0;
 
@@ -19,9 +19,9 @@ int Zombie::cpt = 0;
 Zombie::Zombie(string name, Position pos): Entite(name, pos){
   	PV=PV_MAX;
   	speed=1;
- 	damage=20;
- 	id = cpt;
- 	++cpt;
+ 	  damage=20;
+ 	  id = cpt;
+ 	  ++cpt;
   			
 }
 
@@ -91,7 +91,6 @@ void Zombie::move_up(){//0
 		pos.y -= speed;
   	else //sinon je reste la ou je suis
     	pos.y = pos.y;
-   
 }
 
 void Zombie::move_down(){ //1
@@ -99,7 +98,6 @@ void Zombie::move_down(){ //1
 		pos.y += speed;
   	else //sinon je reste la ou je suis
     	pos.y = pos.y;
-  pos.y += speed; 
 }
 
 void Zombie::move_left(){//2
@@ -112,36 +110,41 @@ void Zombie::move_left(){//2
 void Zombie::move_right(){//3
 	if(pos.x <= 1124-speed)//si en faisant +speed je suis toujours dans le fenetre je me deplace
     	pos.x += speed; 
-  	else //sinon je reste la ou je suis
+ 	else //sinon je reste la ou je suis
     	pos.x = pos.x;
 }
 
-void Zombie::move(){
-  //_distribution(_generator);
- 
+
+void move(vector<Zombie> z){
+  _distribution(_generator);
+  
+  Position posAvant;
+  for(unsigned int i=0; i<z.size(); i++){ //move aléatoire pour chaque zombie
     int rand_move = rand()%4; //0 to 3 
-    posAvant = pos;
+    posAvant = z[i].pos;
     switch(rand_move){
     case 0: // up
-      move_up();
+        z[i].move_up();
       break;
 
     case 1: // down 
-      move_down();
+        z[i].move_down();
       break;
 
     case 2: //left
-      move_left();
+        z[i].move_left();
       break;
 
     case 3://right
-      move_right();
+        z[i].move_right();
       break;
 
     default: 
       break;
 
     
+    }  
+ // }
   }
 }
 
@@ -175,3 +178,13 @@ void Zombie::move(int speed){
 	}
 }
 */
+
+
+void Zombie::attaque(Joueur *p){
+
+  int pv = p->getPV();
+  int distance = getDistance(pos, p->pos);
+  if(distance<= 5){
+    p->setPV(pv-damage);
+  }
+}
