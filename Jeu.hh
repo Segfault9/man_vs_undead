@@ -10,7 +10,7 @@ using namespace std;
 class Jeu {
 	private :
 		std::vector<Zombie> zombies;
-		Joueur p;
+		Joueur j;
 
 	public :
 
@@ -18,5 +18,11 @@ class Jeu {
 
 
 	~Jeu();
+	void spawner(int nb_zombie);
+	void spawn_joueur(Joueur j);
+	Joueur getJoueur();
+	void deplacerZombie(vector<Zombie> zombies, int nb_zombie);
 
+	void print_arene();
+	void test();
 };

@@ -45,7 +45,8 @@ class Zombie : public Entite {
       void move_down();
       void move_left();
       void move_right();
-      void move(vector<Zombie> z);
+      void move();
+
       
   		string toString();
 

@@ -43,10 +43,10 @@ void exploser(vector <Zombie> z, Joueur *p){
 //On regarde la distance entre la bombe et le zombie, et on tue les Zombie si c'est dans la portée est ok
 	for(iter = z.begin(); iter != z.end(); ++iter){
 		
-		int distance = Entite::getDistance(pos, z.pos);
+		int distance = getDistance(p->pos, iter->pos);
 
-		if((int)distance <= range){
-			iter.setPV(0); //si le zombie est dans la portée on le tue 
+		if((int)distance <= 100){
+			*iter.setPV(0); //si le zombie est dans la portée on le tue 
 
 		}
 	}*/

@@ -35,11 +35,9 @@ Zombie::Zombie(string name): Entite(name){
   			
 }
 
-/*Zombie::Zombie(string name, int x, int y):Entite("Zombie " + to_string(cpt), pos.x, pos.y){
-  			
-}*/
 
 Zombie::Zombie():Entite("Zombie " + to_string(cpt)){
+	printf("Création zombie...\n");
   	PV=PV_MAX;
   	speed=1;
  	damage=20;
@@ -116,39 +114,66 @@ void Zombie::move_right(){//3
     	pos.x += speed; 
   	else //sinon je reste la ou je suis
     	pos.x = pos.x;
-  pos.x += speed; 
 }
 
-void Zombie::move(vector<Zombie> z){
+void Zombie::move(){
   _distribution(_generator);
   
 
-  for(unsigned int i=0; i<z.size(); i++){ //move aléatoire pour chaque zombie
+ // for(unsigned int i=0; i<z.size(); i++){ //move aléatoire pour chaque zombie
     int rand_move = rand()%4; //0 to 3 
 
     switch(rand_move){
     case 0: // up
-      z[i].move_up();
+        move_up();
       break;
 
     case 1: // down 
-      z[i].move_down();
+        move_down();
       break;
 
     case 2: //left
-      z[i].move_left();
+        move_left();
       break;
 
     case 3://right
-      z[i].move_right();
+        move_right();
       break;
 
     default: 
       break;
 
     }  
-  }
+ // }
 }
 
 
+/*
+void Zombie::move(int speed){
+	// Déplacement aléatoire
+	int val = random() % 4;
+	Position position;
+	position = getPosition();
+	switch(val){
+		case 0: 
+			position.x+=speed;
+			setPosition(position); // Est
+			break;
+		case 1: 
+			position.x-=speed;
 
+			setPosition(position); // Ouest
+			break;
+		case 2: 
+			position.y-=speed;
+
+			setPosition(position); // Nord
+			break;
+		case 3: 
+			position.y+=speed;
+
+			setPosition(position); // Sud
+			break;
+	}
+}
+*/

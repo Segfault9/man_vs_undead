@@ -15,12 +15,9 @@
 
 int main(int argc, char *argv[]){
 
-    Jeu j("Robert");
+    //Jeu j("Robert");
 
-    //std::cout << a.toString() << endl;
-
-    //j.spawner(5);
-   // j.spawn_joueur(j.getJoueur());
+   // j.test();
 
 
     sf::RenderWindow window(sf::VideoMode(1125, 900), "Man vs Undead");

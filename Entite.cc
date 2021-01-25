@@ -1,4 +1,7 @@
 #include "Entite.hh"
+#include <stdlib.h>
+#define sizeX 16
+#define sizeY 16
 
 Entite::Entite(string name, Position p){
 	pos.x = p.x;
@@ -8,6 +11,8 @@ Entite::Entite(string name, Position p){
 
 Entite::Entite(string name){
 	nom = name;
+	pos.x = rand()%(sizeX+1);
+	pos.y = rand()%(sizeY+1);
 }
 
 Entite::Entite(){}
