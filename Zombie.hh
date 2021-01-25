@@ -12,7 +12,6 @@ using namespace std;
 #include <random>
 #include "Joueur.hh"
 
-
 class Zombie : public Entite {
 	protected :
 		  string nom;
@@ -42,11 +41,12 @@ class Zombie : public Entite {
   		void setPV(int pv);
   		int mort(); // Renvoie 1 si le zombie est mort, sinon 0
 
-      void move();
       void move_up();
       void move_down();
       void move_left();
       void move_right();
+      void move();
+
   		string toString();
 
       //virtual void attaque();
@@ -54,5 +54,3 @@ class Zombie : public Entite {
 
 
 };
-
-void move(vector<Zombie> z);

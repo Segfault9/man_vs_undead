@@ -116,6 +116,8 @@ void Zombie::move_right(){//3
 
 
 void move(vector<Zombie> z){
+  static std::default_random_engine _generator(std::chrono::system_clock::now().time_since_epoch().count());
+  static std::uniform_int_distribution<int> _distribution(33,94);
   _distribution(_generator);
   
   Position posAvant;
