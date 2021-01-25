@@ -60,61 +60,63 @@ int Joueur::attaque(){
 void Joueur::move_up(){
   posAvant = pos; 
   Position temp;
-  if(pos.y > 0){//si en faisant -speed je suis toujours dans le fenetre je me deplace
-    temp.y=pos.y-1;
-    temp.x=pos.x;
-    setPosition(temp);
+  if(pos.x > 0){//si en faisant -speed je suis toujours dans le fenetre je me deplace
+        temp.y=pos.y;
+        temp.x=pos.x-1;
+        setPosition(temp);
   }else{
-    temp.y = pos.y;
-    temp.x=pos.x;
-    setPosition(temp);
+        temp.y=pos.y;
+        temp.x=pos.x;
+        setPosition(temp);
   } //sinon je reste la ou je suis
 }
 
 void Joueur::move_down(){
   posAvant = pos; 
   Position temp;
-  if(pos.y <= 15-1-1){//si en faisant +speed je suis toujours dans le fenetre 670 je me deplace
-      printf("%d\n", pos.y);
-      temp.y= pos.y + 1;
-      temp.x=pos.x;
-      setPosition(temp);
-      printf("%d\n", pos.y);
-  }else{
-    temp.y = pos.y;
-    temp.x=pos.x;
-    setPosition(temp);
-  } //sinon je reste la ou je suis
+   if(pos.x < 15-1-1){
+        temp.x =pos.x+1;
+        temp.y = pos.y;
+        setPosition(temp);
+    }//si en faisant -speed je suis toujours dans le fenetre je me deplace
+    else{
+        temp.y = pos.y;
+        temp.x=pos.x;
+        setPosition(temp);
+    } //sinon je reste la ou je suis  
       
 }
 
 void Joueur::move_left(){
   posAvant = pos; 
   Position temp;
-  if(pos.x > 0){
-    temp.x =pos.x-1;
-    temp.y = pos.y;
-    setPosition(temp);
-  }//si en faisant -speed je suis toujours dans le fenetre je me deplace
-  else{
-    temp.y = pos.y;
-    temp.x=pos.x;
-    setPosition(temp);
-  } //sinon je reste la ou je suis    
+
+  if(pos.y > 0){//si en faisant +speed je suis toujours dans le fenetre 670 je me deplace
+          //printf("%d\n", pos.y);
+          temp.y= pos.y-1;
+          temp.x=pos.x;
+          setPosition(temp);
+          //printf("%d\n", pos.y);
+  }else{
+        temp.y = pos.y;
+        temp.x=pos.x;
+        setPosition(temp);
+  } //sinon je reste la ou je suis   
 }
 
 void Joueur::move_right(){
   posAvant = pos; 
   Position temp;
-  if(pos.x <= 15-1-1){//si en faisant +speed je suis toujours dans le fenetre 935 je me deplace
-    temp.x =pos.x+1;
-    temp.y = pos.y;
-    setPosition(temp);
+
+  if(pos.y <= 15-1-1){//si en faisant +speed je suis toujours dans le fenetre 935 je me deplace
+        temp.x =pos.x;
+        temp.y = pos.y+1;
+        setPosition(temp);
   }else{
-    temp.y = pos.y;
-    temp.x=pos.x;
-    setPosition(temp);
-  } //sinon je reste la ou je suis      
+        temp.y = pos.y;
+        temp.x=pos.x;
+        setPosition(temp);
+  } //sinon je reste la ou je suis  
 }
 
 /*========================================================*/
@@ -129,12 +131,12 @@ void Joueur::move(){
   switch(c){
     case 'z': //up4
       posAvant = pos; 
-      if(pos.y > 0){//si en faisant -speed je suis toujours dans le fenetre je me deplace
-        temp.y=pos.y-1;
-        temp.x=pos.x;
+      if(pos.x > 0){//si en faisant -speed je suis toujours dans le fenetre je me deplace
+        temp.y=pos.y;
+        temp.x=pos.x-1;
         setPosition(temp);
       }else{
-        temp.y = pos.y;
+        temp.y=pos.y;
         temp.x=pos.x;
         setPosition(temp);
       } //sinon je reste la ou je suis
@@ -142,9 +144,9 @@ void Joueur::move(){
 
     case 'd': //right
       posAvant = pos; 
-      if(pos.x <= 15-1-1){//si en faisant +speed je suis toujours dans le fenetre 935 je me deplace
-        temp.x =pos.x+1;
-        temp.y = pos.y;
+      if(pos.y <= 15-1-1){//si en faisant +speed je suis toujours dans le fenetre 935 je me deplace
+        temp.x =pos.x;
+        temp.y = pos.y+1;
         setPosition(temp);
       }else{
         temp.y = pos.y;
@@ -153,10 +155,10 @@ void Joueur::move(){
       } //sinon je reste la ou je suis  
       break;    
 
-    case 's': //left 
+    case 's': //down
       posAvant = pos; 
-      if(pos.x > 0){
-        temp.x =pos.x-1;
+      if(pos.x < 15-1-1){
+        temp.x =pos.x+1;
         temp.y = pos.y;
         setPosition(temp);
       }//si en faisant -speed je suis toujours dans le fenetre je me deplace
@@ -167,11 +169,11 @@ void Joueur::move(){
       } //sinon je reste la ou je suis    
       break;
 
-    case 'q': //down
+    case 'q': //left
       posAvant = pos; 
-      if(pos.y <= 15-1-1){//si en faisant +speed je suis toujours dans le fenetre 670 je me deplace
+      if(pos.y > 0){//si en faisant +speed je suis toujours dans le fenetre 670 je me deplace
           //printf("%d\n", pos.y);
-          temp.y= pos.y + 1;
+          temp.y= pos.y-1;
           temp.x=pos.x;
           setPosition(temp);
           //printf("%d\n", pos.y);
