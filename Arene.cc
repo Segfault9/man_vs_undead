@@ -46,12 +46,15 @@ string Arene::toString(){
 
 //place zombie dans l'arene 
 void Arene::maj(vector<Zombie> z){
-	Position zomb;
+	Position zomb, prec;
 
 	for(unsigned int k = 0 ; k < z.size() ; k++){
+		prec=z[k].getPositionAvant(); 
 		zomb= z[k].getPosition();
-		//arene[z[k].getPositionAvant().x][z[k].getPositionAvant().y] = 0;
-		arene[zomb.x][zomb.y] = 2;			
+		arene[prec.x][prec.y] = 0;
+		printf("prev %d\n",arene[prec.x][prec.y]);
+		arene[zomb.x][zomb.y] = 2;
+		printf("now %d\n",arene[zomb.x][zomb.y]);
 	}
 
 	

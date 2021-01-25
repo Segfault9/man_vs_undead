@@ -11,8 +11,9 @@ Entite::Entite(string name, Position p){
 
 Entite::Entite(string name){
 	nom = name;
-	pos.x = rand()%(sizeX+1);
-	pos.y = rand()%(sizeY+1);
+	pos.x = rand()%sizeX;
+	pos.y = rand()%sizeY;
+	printf("%d\n",pos.x);
 }
 
 Entite::Entite(){}
@@ -22,6 +23,7 @@ Entite::~Entite(){}
 
 
 Position Entite::getPosition(){
+	printf("%d %d\n", pos.x, pos.y );
 	return pos;
 }
 

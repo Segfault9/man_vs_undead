@@ -20,8 +20,8 @@ int main(int argc, char *argv[]){
    Jeu j("Robert");
 
    j.test();
-   /*
-    std::string name = "Robert";
+   
+    /*std::string name = "Robert";
     Position pos_init; 
     pos_init.x = 0; 
     pos_init.y = 0;
@@ -43,17 +43,17 @@ int main(int argc, char *argv[]){
     {
         sf::Event event;
         while (window.pollEvent(event))
-        {
+        {*/
             /*command utilisateur*/ 
             //fenetre.command(window, event, p, g, bomb, z);
-            fenetre.command(window, event, p, g, bomb, zomb);
+        /*    fenetre.command(window, event, p, g, bomb, zomb);
         }
 
         window.clear();
        	fenetre.drawBackground(window);
         window.display();
-    }
+    }*/
 
-	*/
+	
     return 0;
 }

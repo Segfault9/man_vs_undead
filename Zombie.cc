@@ -38,8 +38,8 @@ Zombie::Zombie(string name): Entite(name){
 
 Zombie::Zombie():Entite("Zombie " + to_string(cpt)){
 	printf("Création zombie...\n");
-  	PV=PV_MAX;
-  	speed=1;
+  PV=PV_MAX;
+  speed=1;
  	damage=20;
  	id = cpt;
  	++cpt;
@@ -85,36 +85,43 @@ int Zombie::mort(){
 }
 
 //mouvement du zombie 
-
+/*
 void Zombie::move_up(){//0
 	if(pos.y > 0+speed)//si en faisant -speed je suis toujours dans le fenetre je me deplace
 		pos.y -= speed;
-  	else //sinon je reste la ou je suis
-    	pos.y = pos.y;
+  else //sinon je reste la ou je suis
+    pos.y = pos.y;
 }
 
 void Zombie::move_down(){ //1
-	if(pos.y <= 899-speed)//si en faisant +speed je suis toujours dans le fenetre je me deplace
-		pos.y += speed;
-  	else //sinon je reste la ou je suis
-    	pos.y = pos.y;
+  Position temp;
+	if(pos.y <= 670-speed){//si en faisant +speed je suis toujours dans le fenetre je me deplace
+		  printf("%d\n", pos.y);
+      temp.y= pos.y + speed;
+      temp.x=pos.x;
+      setPosition(temp);
+      printf("%d\n", pos.y);
+  }else //sinon je reste la ou je suis
+    	temp.y = pos.y;
+      temp.x=pos.x;
+      setPosition(temp);
 }
 
 void Zombie::move_left(){//2
  	if(pos.x > 0+speed)//si en faisant -speed je suis toujours dans le fenetre je me deplace
 		pos.x -= speed;
-  	else //sinon je reste la ou je suis
+  else //sinon je reste la ou je suis
     	pos.x = pos.x; 
 }
 
 void Zombie::move_right(){//3
-	if(pos.x <= 1124-speed)//si en faisant +speed je suis toujours dans le fenetre je me deplace
+	if(pos.x <= 935-speed)//si en faisant +speed je suis toujours dans le fenetre je me deplace
     	pos.x += speed; 
  	else //sinon je reste la ou je suis
     	pos.x = pos.x;
 }
-
-
+*/
+/*
 void move(vector<Zombie> z){
 	printf("coucou\n");
   static std::default_random_engine _generator(std::chrono::system_clock::now().time_since_epoch().count());
@@ -151,37 +158,46 @@ void move(vector<Zombie> z){
  // }
   }
 }
+*/
 
 
-/*
 void Zombie::move(int speed){
 	// Déplacement aléatoire
 	int val = random() % 4;
 	Position position;
 	position = getPosition();
+ // printf("x : %d y : %d\n",position.x, position.y);
+  //printf("%d\n", val);
 	switch(val){
 		case 0: 
 			position.x+=speed;
 			setPosition(position); // Est
+     // printf("x : %d y :%d \n",position.x, position.y);
 			break;
 		case 1: 
 			position.x-=speed;
 
 			setPosition(position); // Ouest
+     // printf("x : %d y : %d\n",position.x, position.y);
 			break;
 		case 2: 
 			position.y-=speed;
 
 			setPosition(position); // Nord
+      //printf("x : %d y : %d\n",position.x, position.y);
 			break;
 		case 3: 
 			position.y+=speed;
 
 			setPosition(position); // Sud
+     // printf("x : %d y :%d \n",position.x, position.y);
 			break;
+
+      default:
+        break;
 	}
 }
-*/
+
 
 
 void Zombie::attaque(Joueur *p){
@@ -192,3 +208,4 @@ void Zombie::attaque(Joueur *p){
     p->setPV(pv-damage);
   }
 }
+
