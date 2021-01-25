@@ -17,9 +17,10 @@
 
 int main(int argc, char *argv[]){
 
-    //Jeu j("Robert");
+   Jeu j("Robert");
 
-   // j.test();
+   j.test();
+   /*
     std::string name = "Robert";
     Position pos_init; 
     pos_init.x = 0; 
@@ -52,6 +53,6 @@ int main(int argc, char *argv[]){
         window.display();
     }
 
-
+	*/
     return 0;
 }

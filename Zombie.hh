@@ -12,6 +12,9 @@ using namespace std;
 #include <random>
 #include "Joueur.hh"
 
+void move();
+
+
 class Zombie : public Entite {
 	protected :
 		  string nom;
@@ -45,7 +48,7 @@ class Zombie : public Entite {
       void move_down();
       void move_left();
       void move_right();
-      void move();
+      
 
   		string toString();
 
@@ -54,3 +57,4 @@ class Zombie : public Entite {
 
 
 };
+
