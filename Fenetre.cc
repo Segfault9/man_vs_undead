@@ -23,3 +23,49 @@ void Fenetre::drawBackground(RenderWindow &window)
 {
 	window.draw(background);
 }
+
+void Fenetre::command(RenderWindow &window, Event event, Joueur p, Gun g, Bombe b, Zombie z)
+{
+	int d;
+	switch(event.type){
+		case sf::Event::Closed:
+			window.close();
+			break; 
+		case sf::Event::KeyPressed: //regarde ce qui est entrer au clavier 
+		/*fleche*/
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+                    {
+                        p.move_up();
+                    }
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+                    {
+                        p.move_right();
+                    }
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+                    {
+                        p.move_down();
+                    }
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+                    {
+                        p.move_left();
+                    }
+                    
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::B))
+                    {
+                        //b.exploser();
+                    }
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+                    {
+                        g.tirer(d=g.getDamage(), z, p);
+                    }
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+                    {
+                        window.close();
+                    }
+                    break;
+
+		default:
+			break;
+	}
+                
+}

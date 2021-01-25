@@ -21,4 +21,6 @@ Arme::~Arme(){
 }
 
 
-
+int Arme::getDamage(){
+	return damage;
+}

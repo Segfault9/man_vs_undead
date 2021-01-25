@@ -11,13 +11,24 @@
 #include "Jeu.hh"
 #include "Fenetre.hh"
 #include <SFML/Graphics.hpp>
-
+#include "Joueur.hh"
+#include "Fenetre.hh"
+#include "Zombie.hh"
 
 int main(int argc, char *argv[]){
 
     //Jeu j("Robert");
 
    // j.test();
+    std::string name = "Robert";
+    Position pos_init; 
+    pos_init.x = 0; 
+    pos_init.y = 0;
+    Joueur p(name, pos_init);
+    Zombie z;
+    //Joueur *pt = p;
+    Gun g("gun", 2*p.range, p.damage, MUNITION_MAX);
+    Bombe bomb("bomb", 100, 100, 1);
 
 
     sf::RenderWindow window(sf::VideoMode(1125, 900), "Man vs Undead");
@@ -29,8 +40,7 @@ int main(int argc, char *argv[]){
         sf::Event event;
         while (window.pollEvent(event))
         {
-            if (event.type == sf::Event::Closed)
-                window.close();
+            fenetre.command(window, event, p, g, bomb, z);
         }
 
         window.clear();

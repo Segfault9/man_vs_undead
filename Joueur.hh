@@ -11,12 +11,12 @@ class Joueur: public Entite {
 		  int PV;
       int score;
       int vie;
-      int damage=50;
+      
       //int range;
       //vector <Arme> armes;
 
 	public:
-  		Joueur(std::string name);
+  		//Joueur(std::string name);
       Joueur(string name, Position pos);
       Joueur();
 
@@ -33,6 +33,7 @@ class Joueur: public Entite {
       int attaque();
   		string toString();
       int range=25;
+      int damage=50;
       void move_up();
       void move_down();
       void move_left();

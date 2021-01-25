@@ -53,11 +53,11 @@ void exploser(vector <Zombie> z, Joueur *p){
 
 	unsigned int i;
 	modifPlayer(p);
-
+	//munition = 0;
 	for(i=0; i<z.size(); i++){
 		int distance = getDistance(p->pos, z[i].pos);
 
-		if((int)distance <= 10)
+		if((int)distance <= 100)
 			z[i].setPV(0); //si le zombie est dans la portée on le 
 
 	}
