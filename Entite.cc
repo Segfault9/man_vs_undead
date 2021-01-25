@@ -42,3 +42,8 @@ int getDistance(Position p1, Position p2){
 	return (int) distance; 
 }
 
+
+Position Entite::getPositionAvant(){
+	return posAvant;
+}
+

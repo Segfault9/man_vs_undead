@@ -10,8 +10,8 @@ using namespace std;
 #define PV_MAX 100
 
 // obtain a seed from the system clock:
-std::default_random_engine Zombie::_generator(std::chrono::system_clock::now().time_since_epoch().count());
-std::uniform_int_distribution<int> Zombie::_distribution(33,94);
+//std::default_random_engine Zombie::_generator(std::chrono::system_clock::now().time_since_epoch().count());
+//std::uniform_int_distribution<int> Zombie::_distribution(33,94);
 
 int Zombie::cpt = 0;
 
@@ -56,7 +56,7 @@ string Zombie::toString()
 {
   	string res;
 
-    res = "Je suis le zombie n°" + to_string(nb_zombies()) + " (" + to_string(PV) + "/" + to_string(PV_MAX) + ")";
+    res = "Pos zombie : " + to_string(pos.x) + "," + to_string(pos.y) + ")\n";
   	return res;
 
 }
@@ -116,34 +116,32 @@ void Zombie::move_right(){//3
     	pos.x = pos.x;
 }
 
-void Zombie::move(vector<Zombie> z){
-  _distribution(_generator);
-  
-
-  for(unsigned int i=0; i<z.size(); i++){ //move aléatoire pour chaque zombie
+void Zombie::move(){
+  //_distribution(_generator);
+ 
     int rand_move = rand()%4; //0 to 3 
-
+    posAvant = pos;
     switch(rand_move){
     case 0: // up
-      z[i].move_up();
+      move_up();
       break;
 
     case 1: // down 
-      z[i].move_down();
+      move_down();
       break;
 
     case 2: //left
-      z[i].move_left();
+      move_left();
       break;
 
     case 3://right
-      z[i].move_right();
+      move_right();
       break;
 
     default: 
       break;
 
-    }  
+    
   }
 }
 

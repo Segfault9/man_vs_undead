@@ -18,15 +18,15 @@ class Entite {
 		string nom;
 
 	public :
-		Position pos; 
+		Position pos;
+		Position posAvant;
 		Entite(string name, Position pos);
 		Entite(string name);
 		Entite();
 		~Entite();
-
 		void setPosition(Position position);
-		Position getPosition();
-		
+		Position getPosition();		
+		Position getPositionAvant();
 
 		
 	

@@ -1,6 +1,5 @@
 #include "Arene.hh"
 
-
 Arene::Arene(int x, int y){
 	printf("Création de l'arène...\n");
 
@@ -10,9 +9,7 @@ Arene::Arene(int x, int y){
 	for(int i = 0 ; i < sizeX ; i++){
 		for(int j = 0 ; j < sizeY ; j++){
 			arene[i][j] = 0;
-			printf(" %d" , arene[i][j]);
 		}
-		printf("\n");
 	}
 }
 
@@ -48,17 +45,22 @@ string Arene::toString(){
 
 
 //place zombie dans l'arene 
-void Arene::maj(Zombie z){
+void Arene::maj(vector<Zombie> z){
 	Position zomb;
-	zomb= z.getPosition();
-	for(int i = 0 ; i < sizeX ; i++){
+
+	for(int i = 0 ; i < sizeX ; i++){	
 		for(int j = 0 ; j < sizeY ; j++){
-			if( (i == zomb.x && j==zomb.y) && (arene[i][j] == 0) ){
-				arene[i][j] = 2;
-			}
-			
+			arene[i][j] = 0;
 		}
 	}
+
+	for(unsigned int k = 0 ; k < z.size() ; k++){
+		zomb= z[k].getPosition();
+		arene[zomb.x][zomb.y] = 2;			
+	}
+
+	
+	
 }
 
 void Arene::majJoueur(Joueur j){

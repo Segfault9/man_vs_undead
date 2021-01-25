@@ -17,8 +17,6 @@ void Jeu::spawner(int nb_zombie){
 	for(int i = 0 ; i < nb_zombie ; i++){
 		Zombie z;
 		zombies.push_back(z); // Ajouter les zombies à la liste
-		arene.maj(z); // Faire apparaître le zombie
-		
 	}
 }
 
@@ -31,11 +29,13 @@ Joueur Jeu::getJoueur(){
 	return j;
 }
 
-void Jeu::deplacerZombie(vector<Zombie> z, int nb_zombie){
-	for(int i = 0 ; i < nb_zombie ; i++){
-		z[i].move(1);
-		arene.maj(z[i]);
+void Jeu::deplacerZombie(vector<Zombie> z){
+	for(unsigned int i = 0 ; i < z.size() ; i++){
+		std::cout << z[i].toString() << endl;
+		z[i].move();
 	}
+
+	arene.maj(z);
 }
 
 
@@ -45,10 +45,11 @@ void Jeu::print_arene(){
 
 void Jeu::test(){
 	spawn_joueur(j);
-	spawner(5);
+	spawner(1);
 	print_arene();
+
 	for(int i = 0 ; i < 10 ; i++){
-		deplacerZombie(zombies, 5);
+		deplacerZombie(zombies);
 		print_arene();
 	}
 }
